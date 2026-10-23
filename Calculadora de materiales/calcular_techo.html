@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular techo</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="calcular_techo.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="calcular-techo">
+            <h1 class="encabezado">Calcular techo</h1>
+            </div>
+            <div class="regresar">
+                <a onclick="window.location.href='menu_principal.html'">
+                    <img src="regresar.png" alt="regresar" class="regresar-icon">
+                </a>
+                <p class="volver-texto">Volver al menú</p>
+            </div>
+            <div class="recibir-medidas">
+
+                <p class="medidas">Espesor (m)</p>
+                <input type="number" id="numero1" placeholder="Ej: 4">
+
+                <p class="medidas">Ancho (m)</p>
+                <input type="number" id="numero2" placeholder="Ej: 9">
+
+                <p class="medidas">Largo (m)</p>
+                <input type="number" id="numero3" placeholder="Ej: 7">
+
+                <button class="resultado" id="calcular">Calcular</button>
+                
+                <div class="resultado-contenedor" id="resultado">
+                    <p class="resultado-texto" id="techo-superficie">Superficie: --</p>
+                    <p class="resultado-texto" id="techo-cemento">Cemento: --</p>
+                    <p class="resultado-texto" id="techo-arena">Arena: --</p>
+                    <p class="resultado-texto" id="techo-piedra">Piedra: --</p>
+                    <p class="resultado-texto" id="techo-hierro8">Hierro 8: --</p>
+                    <p class="resultado-texto" id="techo-hierro6">Hierro 6: --</p>
+                </div>
+
+                <script src="calcular_techo.js"></script>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular columna</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="calcular_columna.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="calcular-columna">
+            <h1 class="encabezado">Calcular columna</h1>
+            </div>
+            <div class="regresar">
+                <a onclick="window.location.href='menu_principal.html'">
+                    <img src="regresar.png" alt="regresar" class="regresar-icon">
+                </a>
+                <p class="volver-texto">Volver al menú</p>
+            </div>
+            <div class="recibir-medidas">
+
+                <p class="medidas">Largo de columna (m)</p>
+                <input type="number" id="numero1" placeholder="Ej: 8">
+                <button class="resultado" id="calcular">Calcular</button>
+                
+                <div class="resultado-contenedor" id="resultado">
+                    <p class="resultado-texto" id="columna-cemento">Cemento: --</p>
+                    <p class="resultado-texto" id="columna-arena">Arena: --</p>
+                    <p class="resultado-texto" id="columna-piedra">Piedra: --</p>
+                    <p class="resultado-texto" id="columna-hierro10">Hierro 10: --</p>
+                    <p class="resultado-texto" id="columna-hierro4">Hierro 4: --</p>
+                </div>
+
+                <script src="calcular_columna.js"></script>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

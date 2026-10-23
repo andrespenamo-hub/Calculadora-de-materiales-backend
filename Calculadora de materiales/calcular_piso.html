@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular pisos</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="calcular_piso.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="calcular-pisos">
+            <h1 class="encabezado">Calcular pisos</h1>
+            </div>
+            <div class="regresar">
+                <a onclick="window.location.href='menu_principal.html'">
+                    <img src="regresar.png" alt="regresar" class="regresar-icon">
+                </a>
+                <p class="volver-texto">Volver al menú</p>
+            </div>
+            <div class="recibir-medidas">
+
+                <p class="medidas">Ancho (m)</p>
+                <input type="number" id="numero1" placeholder="Ej: 3">
+                <p class="medidas">Largo (m)</p>
+                <input type="number" id="numero2" placeholder="Ej: 2">
+                <button class="resultado" id="calcular">Calcular</button>
+                
+                <div class="resultado-contenedor" id="resultado">
+                    <p class="resultado-texto" id="pisos-superficie">Superficie: --</p>
+                    <p class="resultado-texto" id="pisos-extra">Con 10% extra: --</p>
+                </div>
+
+                <script src="calcular_piso.js"></script>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

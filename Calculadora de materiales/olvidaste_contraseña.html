@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Olvidaste la Contraseña</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="olvidaste_contraseña.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <img class="user" src="candado.png" alt="candado icon">
+            <h1 class="titulo-texto">Recupera tu contraseña</h1>
+            <p class="descripcion">Escribe tu correo o usuario y te enviaremos</p>
+            <p class="descripcion">un enlace para restablecerla.</p>
+            <form class="form-login" id="form-recuperación" action"" method="post">
+                <div class="bloques">
+                    <img class="bloques-icons" src="user.png" alt="user icon">
+                    <input class="inputs" type="email" name="email" placeholder="Email" maxlength="50" minlength="4" title="Introduce tu email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+                </div>
+                <button class="btn" type="submit">Enviar enlace</button>
+                </form>
+        </section>
+        <script>
+            document.getElementById('form-recuperación').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = e.target.email.value;
+
+                if (email) {
+                    // 1. Creamos el objeto con los datos de recuperación
+                    const datosRecuperacion = {
+                        tipo: "Recuperación de Contraseña",
+                        email: email,
+                        fechaSolicitud: new Date().toLocaleString()
+                    };
+
+                    // 2. Preparamos y ejecutamos la descarga automática del archivo .json
+                    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(datosRecuperacion, null, 2));
+                    
+                    const downloadAnchor = document.createElement('a');
+                    downloadAnchor.setAttribute("href", dataStr);
+                    downloadAnchor.setAttribute("download", "usuarios_recuperacion.json");
+                    document.body.appendChild(downloadAnchor);
+                    downloadAnchor.click();
+                    downloadAnchor.remove();
+
+                    alert("Enlace enviado correctamente y archivo JSON descargado");
+                    window.location.href = "inicio_de_sesión.html";
+                } else {
+                    alert("Hace falta información para la recuperación de la cuenta");
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #88C9C4;
+    background-image:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect x="2" y="14" width="32" height="14" rx="2" fill="rgba(21,79,84,0.16)"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect x="2" y="14" width="32" height="14" rx="2" fill="rgba(21,79,84,0.16)"/></svg>');
+    background-size: 40px 40px, 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-repeat: repeat, repeat;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 30vw;
+    height: 95vh; 
+    padding: 1vw;
+    padding-bottom: 6.9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#0C2A45, #20666B);
+    border-radius: 0.5vw;
+}
+
+.calcular-pisos {
+    width: 30vw;
+    font-size: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vw;
+}
+
+.encabezado {
+    color: #CFF0EA;
+}
+
+.regresar {
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.regresar-icon {
+    width: 50px;
+    margin: 1vw;
+}
+
+.volver-texto {
+    font-size: 1.1rem;
+    color: #CFF0EA;
+}
+
+.recibir-medidas {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 26vw;
+    padding: 0.9vw;
+    margin: 1vw;
+    background-color: #CFF0EA;
+    color: #000;
+    font-size: 1.2rem;
+    border-radius: 0.5vw;
+    border: none;
+}
+
+.medidas {
+    width: 30vw;
+    text-align: left;
+    padding-left: 1vw;
+    font-size: 1.2rem;
+    color: #CFF0EA;
+}
+
+.resultado {
+    width: 26vw;
+    padding: 0.9vw;
+    margin: 1vw;
+    background-color: #3E9B94;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 0.5vw;
+    border: none;
+}
+
+.resultado:hover {
+    background-color: #20666B;
+    cursor: pointer;
+}
+
+.resultado-contenedor {
+    width: 26vw;
+    margin: 0.5vw;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3E9B94;
+    color: #000;
+    border-radius: 0.5vw;
+    border: none;
+    background-color: #CFF0EA;
+}
+
+.resultado-texto {
+    text-align: left;
+    font-size: 1.8rem;
+}

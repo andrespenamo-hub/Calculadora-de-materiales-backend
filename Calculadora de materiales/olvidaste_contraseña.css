@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #88C9C4;
+    background-image:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect x="2" y="14" width="32" height="14" rx="2" fill="rgba(21,79,84,0.16)"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect x="2" y="14" width="32" height="14" rx="2" fill="rgba(21,79,84,0.16)"/></svg>');
+    background-size: 40px 40px, 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-repeat: repeat, repeat;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 30vw;
+    height: 80vh; 
+    padding: 2vw;
+    padding-bottom: 4.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#0C2A45, #20666B);
+    border-radius: 0.5vw;
+}
+
+.user {
+    width: 200px;
+}
+
+.titulo-texto {
+    color: #CFF0EA;
+    font-size: 1.5rem;
+    margin: 1vw;
+}
+
+.descripcion {
+    color: #CFF0EA;
+}
+
+i {
+    font-size: 1.7rem;
+    color: #CFF0EA;
+    margin-right: 0.5vw;
+}
+
+.form-login {
+    width: 30vW;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs {
+    width: 20vw;
+    padding: 0.5vw;
+    margin: 1vw;
+    margin-right: 3vw;
+    border-radius: 0.5vw;
+    font-size: 1.2rem;
+    background-color: #CFF0EA;
+    border-color: #0C3B45;
+}
+
+.btn{
+    width: 20vw;
+    padding: 0.5vw;
+    margin: 1vw;
+    background-color: #20666B;
+    color: #CFF0EA;
+    font-size: 1.2rem;
+    border-radius: 0.5vw;
+    border-color: #3E9B94;
+}
+
+.btn:hover {
+    background-color: #3E9B94;
+    cursor: pointer;
+}
+
+.cuenta{
+    font-size: 1rem;
+    color: #CFF0EA;
+}
+
+a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: #CFF0EA;
+}
+
+.bloques {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bloques-icons {
+    width: 40px;
+}

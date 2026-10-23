@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registro</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="registro.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="registro">
+            <i class="fa-solid fa-bars"></i>
+            <h1>Registro</h1>
+            </div>
+            <i class="user fa-solid fa-circle-user"></i>
+            <form class="form-registro" id="form-registro">
+                <div class="bloques">
+                    <i class="bloques-icons fa-solid fa-user-check"></i>
+                    <input class="inputs" type="email" name="email" placeholder="Usuario" maxlength="50" minlength="4" title="Introduce tu email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+                </div>
+                <div class="bloques">
+                    <i class="bloques-icons fa-solid fa-key"></i>
+                    <input class="inputs" type="password" name="password" placeholder="Contraseña" maxlength="25" minlength="8" title="Introduce tu contraseña" pattern="[0-9]{8,25}" required>
+                </div>
+                <div class="bloques">
+                    <i class="bloques-icons fa-solid fa-lock"></i>
+                    <input class="inputs" type="password" name="confirm" placeholder="Confirmar Contraseña" maxlength="25" minlength="8" title="Introduce tu contraseña" pattern="[0-9]{8,25}" required>
+                </div>
+                <button class="btn" type="submit">Crear Cuenta</button>
+            </form>
+            <div>
+                <p>¿Ya tienes cuenta?</p>
+                <a class="btn-primary" onclick="window.location.href='inicio_de_sesión.html'">Iniciar sesion</a>
+            </div>
+        </section>
+        <script>
+            document.getElementById('form-registro').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = e.target.email.value;
+                const password = e.target.password.value;
+                const confirm = e.target.confirm.value;
+
+                if (password !== confirm) {
+                    alert("Las contraseñas no coinciden");
+                    return;
+                }
+
+                if (email && password && confirm) {
+                    // 1. Creamos el objeto con los datos del registro
+                    const nuevoRegistro = {
+                        tipo: "Registro",
+                        email: email,
+                        password: password,
+                        fechaRegistro: new Date().toLocaleString()
+                    };
+
+                    // 2. Convertimos a formato JSON y preparamos la descarga
+                    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(nuevoRegistro, null, 2));
+                    
+                    const downloadAnchor = document.createElement('a');
+                    downloadAnchor.setAttribute("href", dataStr);
+                    downloadAnchor.setAttribute("download", "usuarios_registro.json");
+                    document.body.appendChild(downloadAnchor);
+                    downloadAnchor.click();
+                    downloadAnchor.remove();
+
+                    alert("¡Cuenta creada y archivo JSON descargado!");
+                    window.location.href = "inicio_de_sesión.html";
+                } else {
+                    alert("Hace falta información para la creación de la cuenta");
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

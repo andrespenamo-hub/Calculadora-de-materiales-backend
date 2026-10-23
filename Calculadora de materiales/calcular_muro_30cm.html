@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcular muro (30cm)</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="calcular_muro_30cm.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="calcular-muro">
+            <h1 class="encabezado">Calcular muro</h1>
+            </div>
+            <div class="regresar">
+                <a onclick="window.location.href='menu_principal.html'">
+                    <img src="regresar.png" alt="regresar" class="regresar-icon">
+                </a>
+                <p class="volver-texto">Volver al menú</p>
+            </div>
+            <h1 class="espesor-texto">Espesor del muro</h1>
+            <div class="elegir-espesor">
+                <a onclick="window.location.href='calcular_muro_20cm.html'" class="btn-veinte">20 cm</a>
+                <a class="btn-treinta">30 cm</a>
+            </div>
+            <div class="recibir-medidas">
+
+                <p class="medidas">Largo (m)</p>
+                <input type="number" id="numero1" placeholder="Ej: 2">
+                <p class="medidas">Alto (m)</p>
+                <input type="number" id="numero2" placeholder="Ej: 5">
+                <button class="resultado" id="calcular">Calcular</button>
+                
+                <div class="resultado-contenedor" id="resultado">
+                    <p class="resultado-texto" id="res-superficie">Superficie: --</p>
+                    <p class="resultado-texto" id="res-cemento">Cemento: --</p>
+                    <p class="resultado-texto" id="res-arena">Arena: --</p>
+                    <p class="resultado-texto" id="res-ladrillos">Ladrillos: --</p>
+                </div>
+
+                <script src="calcular_muro_30cm.js"></script>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scalable=1.0, minimum-scalable=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inicio de Sesión</title>
+    <meta name="description" content="Pagina web del equipo de los FET-OS">
+    <meta name="keywords" content="calculadora, materiales, construccion, calcular">
+    <meta name="author" content="Los FET-OS">
+    <link rel="shortcut icon" href="icon.png">
+    <link rel="stylesheet" href="inicio_de_sesión.css">
+    <script src="https://kit.fontawesome.com/9d1a86738f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="inicio-de-sesión">
+            <i class="bars fa-solid fa-bars"></i>
+            <h1 class="encabezado">Inicio de Sesión</h1>
+            </div>
+            <i class="user fa-solid fa-circle-user"></i>
+            <form class="form-login" id="form-login">
+                <div class="bloques">
+                    <i class="bloques-icons fa-solid fa-user-check"></i>
+                    <input class="inputs" type="email" name="email" placeholder="Usuario" maxlength="50" minlength="4" title="Introduce tu email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
+                </div>
+                <div class="bloques">
+                    <i class="bloques-icons fa-solid fa-key"></i>
+                    <input class="inputs" type="password" name="password" placeholder="Contraseña" maxlength="25" minlength="8" title="Introduce tu contraseña" pattern="[0-9]{8,25}" required>
+                </div>
+                <button class="btn" type="submit">Iniciar Sesión</button>
+                </form>
+                <div class="contenedor-recordar">
+                    <label class="recordar" for="recordar"><input type="checkbox">Recuerdarme</label>
+                </div>
+                <div class="registro-recuperar-contraseña">
+                    <div class="registro">
+                        <h1 class="cuenta">¿No tienes una cuenta?</h1>
+                        <a onclick="window.location.href='registro.html'">Registrate aquí!</a>
+                    </div>
+                    <div class="recuperar-contraseña">
+                        <a onclick="window.location.href='olvidaste_contraseña.html'">Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+        </section>
+        <script>
+            document.getElementById('form-login').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = e.target.email.value;
+                const password = e.target.password.value;
+
+                if (email && password) {
+                    // 1. Objeto con los datos
+                    const nuevoUsuario = {
+                        email: email,
+                        password: password,
+                        fechaRegistro: new Date().toLocaleString()
+                    };
+
+                    // 2. Convertimos el objeto a texto JSON
+                    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(nuevoUsuario, null, 2));
+            
+                    // 3. Creamos un enlace invisible para descargar el archivo .json
+                    const downloadAnchor = document.createElement('a');
+                    downloadAnchor.setAttribute("href", dataStr);
+                    downloadAnchor.setAttribute("download", "inicio_sesion.json");
+                    document.body.appendChild(downloadAnchor);
+                    downloadAnchor.click();
+                    downloadAnchor.remove();
+
+                    // 4. Redirigimos al menú principal
+                    window.location.href = "menu_principal.html";
+                } else {
+                    alert("Hace falta información para iniciar sesión");
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>
